@@ -109,38 +109,6 @@ namespace PathFinder
 
 
 
-        /// <summary>
-        /// PROBLEMS!
-        /// METHOD 1: for (int i = min; i leq max;) if (rand leq prob) add number to ANS
-        /// METHOD 2: random val, if (val NOT in ANS) add to ANS, else sample new random
-        /// If you loop over all options (for loop) while the max - min is very large, it will take forever!
-        /// If you randomly choose numbers then you need to be able to determine if already in array...
-        /// This would probably be fine normally, BUT: if min = 0, max = 1,000,001, and you pick 999,999 numbers... a lot of doubles, which causes issues...
-        /// In that case, the Method 1 would be faster/better
-        /// 
-        /// ExpTime: R = Gen Random number, N = total numbers, M = range, F = time to look through array
-        /// M1: MAX R*M, R*N -- R*M, AVG: R*((M+N)/2)
-        /// 
-        /// 1, 1+1/10
-        /// M2: R*N -- R*INF, AVG: sum 1 + (sum (i-1)/10^j, j=1 to infinity), i=1 to 10 = 15
-        /// M2: AVG: N + (N / 2M)
-        /// M2: 0 => R + 0
-        /// M2: 1 => R + 1F + 1/M * (R + 1/M * (R + ...))
-        /// M2: N-1 => R + (N-1)F + (N-1)/M * (R + ...)
-        /// 
-        /// (M+N)/2 <> N + N*(N / 2M)
-        /// N=50, M=50
-        /// 50 <> 75
-        /// N=50, M=60
-        /// 55 <> 70.8
-        /// N=50, M=70
-        /// 60 <> 67.85
-        /// N=50, M=80
-        /// 75 <> 65
-        /// N=50, M=75
-        /// 67.5 <> 66.5
-        /// 
-        /// </summary>
 
         //
         // Generate a list of (numberOf) unique integers, duplicates not allowed
@@ -274,6 +242,40 @@ namespace PathFinder
             return ans;
         }
 
+
+
+        /// <summary>
+        /// PROBLEMS!
+        /// METHOD 1: for (int i = min; i leq max;) if (rand leq prob) add number to ANS
+        /// METHOD 2: random val, if (val NOT in ANS) add to ANS, else sample new random
+        /// If you loop over all options (for loop) while the max - min is very large, it will take forever!
+        /// If you randomly choose numbers then you need to be able to determine if already in array...
+        /// This would probably be fine normally, BUT: if min = 0, max = 1,000,001, and you pick 999,999 numbers... a lot of doubles, which causes issues...
+        /// In that case, the Method 1 would be faster/better
+        /// 
+        /// ExpTime: R = Gen Random number, N = total numbers, M = range, F = time to look through array
+        /// M1: MAX R*M, R*N -- R*M, AVG: R*((M+N)/2)
+        /// 
+        /// 1, 1+1/10
+        /// M2: R*N -- R*INF, AVG: sum 1 + (sum (i-1)/10^j, j=1 to infinity), i=1 to 10 = 15
+        /// M2: AVG: N + (N / 2M)
+        /// M2: 0 => R + 0
+        /// M2: 1 => R + 1F + 1/M * (R + 1/M * (R + ...))
+        /// M2: N-1 => R + (N-1)F + (N-1)/M * (R + ...)
+        /// 
+        /// (M+N)/2 <> N + N*(N / 2M)
+        /// N=50, M=50
+        /// 50 <> 75
+        /// N=50, M=60
+        /// 55 <> 70.8
+        /// N=50, M=70
+        /// 60 <> 67.85
+        /// N=50, M=80
+        /// 75 <> 65
+        /// N=50, M=75
+        /// 67.5 <> 66.5
+        /// 
+        /// </summary>
 
         public static void TestCreating(Random rand)
         {
