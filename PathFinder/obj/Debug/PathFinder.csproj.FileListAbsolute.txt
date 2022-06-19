@@ -1,0 +1,15 @@
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\bin\Debug\PathFinder.exe.config
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\bin\Debug\PathFinder.exe
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\bin\Debug\PathFinder.pdb
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.csprojAssemblyReference.cache
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\MainWindow.g.cs
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\App.g.cs
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder_MarkupCompile.cache
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder_MarkupCompile.lref
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\MainWindow.baml
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.g.resources
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.Properties.Resources.resources
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.csproj.GenerateResource.cache
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.csproj.CoreCompileInputs.cache
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.exe
+J:\Users\Gebruiker\source\repos\PathFinder\PathFinder\obj\Debug\PathFinder.pdb

@@ -1,0 +1,81 @@
+﻿<Window x:Class="PathFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PathFinder"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1200" Name="mainWindow">
+    <Grid Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Name="topGrid" Background="#EEEEEE">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Name="delayMStext" Text="Delay in ms:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,0,0,0"/>
+                <TextBlock Name="delayMSval" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Right" 
+                           Width="24" Margin="0,0,8,0"/>
+                <Slider Name="delayMS" Minimum="10" Maximum="500" Margin="2" Width="250" ValueChanged="DelayMS_ValueChanged"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Name="field" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" HorizontalAlignment="Stretch" Name="y_axis">
+
+                </StackPanel>
+                <Canvas Grid.Column="1" Name="VisualisationField" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    
+                </Canvas>
+            </Grid>
+            <Grid Grid.Column="1" Background="#CCCCCC"></Grid>
+            <Grid Grid.Column="2" Name="controlGrid">
+                <ScrollViewer Name="controlGridScroll" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Name="controlGridStackPanel" Orientation="Vertical" Margin="0,0,10,0">
+                        <TextBlock Text="Controls" Margin="10,6,0,16" FontWeight="Bold"/>
+                        <ComboBox Margin="10,0,0,10" Name="generateOptions"/>
+                        <Grid Name="numbOfPointsGrid">
+                            <TextBlock Text="Number of points:" Name="numbOfPointsText" Margin="10,0,0,10" VerticalAlignment="Center"/>
+                            <TextBox Text="20" Margin="10,0,0,10" Width="54" TextAlignment="Right" Name="numbOfPoints" HorizontalAlignment="Right" 
+                                 PreviewTextInput="EnsureIntPreviewTextInput" TextChanged="EnsureTextBoxNotEmpty"/>
+                        </Grid>
+                        <Grid Name="minValueGrid">
+                            <TextBlock Text="Number of points:" Name="minValText" Margin="10,0,0,10" VerticalAlignment="Center"/>
+                            <TextBox Text="0" Margin="10,0,0,10" Width="54" TextAlignment="Right" Name="minVal"
+                                 PreviewTextInput="EnsureNumbPreviewTextInput" TextChanged="EnsureTextBoxNotEmpty"/>
+                        </Grid>
+                        <Grid Name="maxValueGrid">
+                            <TextBlock Text="Number of points:" Name="maxValText" Margin="10,0,0,10" VerticalAlignment="Center"/>
+                            <TextBox Text="100" Margin="10,0,0,10" Width="54" TextAlignment="Right" Name="maxVal"
+                                 PreviewTextInput="EnsureNumbPreviewTextInput" TextChanged="EnsureTextBoxNotEmpty"/>
+                        </Grid>
+                        <Grid Name="allowDuplicateNumbers">
+                            <TextBlock Text="Allow duplicate numbers:" Name="allowDupText" Margin="10,0,0,10" VerticalAlignment="Center"/>
+                            <CheckBox Name="allowDup" HorizontalAlignment="Right" Margin="10,0,2,10" VerticalAlignment="Center" IsChecked="True" 
+                                  Unchecked="AllowDupUnchecked"/>
+                        </Grid>
+
+                        <ComboBox Margin="10,0,0,10" Name="objectType" SelectionChanged="ObjectTypeSelectionChanged"/>
+                        <Button Name="randomise" Content="r" VerticalAlignment="Top" Height="25" Margin="10,0,0,10"
+                            Click="RandomiseClick"/>
+
+                        <ComboBox Margin="10,0,0,10" Name="algorithmToUse"/>
+                        <Button Name="performAction" Content="xA" Height="25" Margin="10,0,0,10" Click="SortSet"/>
+                        <!--
+                        <Button Name="forTesting" Content="ButtonForTesting" Height="25" Margin="10,0,0,10" Click="ForTesting_Click"/>
+                        <Button Name="testWrappers" Content="Test Wrappers" Height="25" Margin="10,0,0,10" Click="TestWrappers"/>-->
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
