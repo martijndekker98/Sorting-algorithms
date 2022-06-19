@@ -4,7 +4,7 @@ I have implemented a number of sorting algorithms ([Bubble sort](https://github.
 
 ## Challenges
 Implementing this small program presented some challenges, some easy and some more difficult, such as: <br>
-- Random extension that can generate random numbers without excluding a single possible value (the standard Random.Next() method generates a number: 
+- [Random extension](https://github.com/martijndekker98/PathFinder/blob/884763befa29f17f476588fefd4a826afc1009b9/PathFinder/RandomExtMethods.cs#L16) that can generate random numbers without excluding a single possible value (the standard Random.Next() method generates a number: 
    >    [that is greater than or equal to 0 and less than Int32.MaxValue.](https://docs.microsoft.com/en-us/dotnet/api/system.random.next?view=net-6.0) <br>
 
    and thus excludes the MaxValue).
